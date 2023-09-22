@@ -18,6 +18,7 @@
 		B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */; };
 		B883DFD12ABD7BF100D4BE7D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */; };
 		B883DFD32ABD7C3700D4BE7D /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */; };
+		B883DFD52ABD89B200D4BE7D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageTableViewCell.swift; sourceTree = "<group>"; };
 		B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */,
 				B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */,
 				B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */,
+				B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */,
 				B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */,
 				B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */,
 				B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */,
@@ -265,6 +268,7 @@
 			files = (
 				B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */,
 				B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */,
+				B883DFD52ABD89B200D4BE7D /* UITableView+Extension.swift in Sources */,
 				B883DFD12ABD7BF100D4BE7D /* UIImage+Extension.swift in Sources */,
 				B883DFD32ABD7C3700D4BE7D /* PaymentCell.swift in Sources */,
 				B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */,
