@@ -44,7 +44,7 @@ extension HomeViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ColorImageTableViewCell.self), for: indexPath) as? ColorImageTableViewCell else { return UITableViewCell() }
+		let cell = tableView.dequeue(ColorImageTableViewCell.self, for: indexPath)
 		
 		return cell
 	}
@@ -114,7 +114,7 @@ extension HomeViewController {
 		tableView.delegate = self
 		tableView.contentInsetAdjustmentBehavior = .never
 		tableView.separatorStyle = .none
-		tableView.register(ColorImageTableViewCell.self, forCellReuseIdentifier: String(describing: ColorImageTableViewCell.self))
+		tableView.register(ColorImageTableViewCell.self)
 	}
 }
 
