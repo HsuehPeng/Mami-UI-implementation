@@ -18,6 +18,13 @@ class HomeViewController: UIViewController {
 		return view
 	}()
 	
+	lazy var tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.translatesAutoresizingMaskIntoConstraints = false
+		tableView.backgroundColor = .white
+		return tableView
+	}()
+	
 	// MARK: - LifeCycle
 	
 	override func viewDidLoad() {
@@ -43,6 +50,7 @@ extension HomeViewController {
 	}
 	
 	private func configureUI() {
+		view.addSubview(tableView)
 		view.addSubview(navigationBarBackgroundView)
 
 		NSLayoutConstraint.activate([
@@ -50,6 +58,13 @@ extension HomeViewController {
 			navigationBarBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			navigationBarBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 			navigationBarBackgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+		])
+		
+		NSLayoutConstraint.activate([
+			tableView.topAnchor.constraint(equalTo: view.topAnchor),
+			tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 		])
 	}
 }
