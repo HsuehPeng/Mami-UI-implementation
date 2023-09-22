@@ -32,6 +32,33 @@ class HomeViewController: UIViewController {
 		
 		configureNavBar()
 		configureUI()
+		configureTableView()
+	}
+}
+
+// MARK: - UITableViewDataSource
+
+extension HomeViewController: UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		1
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ColorImageTableViewCell.self), for: indexPath) as? ColorImageTableViewCell else { return UITableViewCell() }
+		
+		return cell
+	}
+}
+
+// MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		if indexPath.row == 0 {
+			return 300
+		}
+		
+		return UITableView.automaticDimension
 	}
 }
 
@@ -40,7 +67,6 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
 	private func configureNavBar() {
 		title = "媽咪愛 UI實作"
-		navigationController?.navigationBar.isTranslucent = true
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .topAttached, barMetrics: .default)
 		navigationController?.navigationBar.shadowImage = UIImage()
 		navigationController?.navigationBar.tintColor = .white
@@ -66,6 +92,14 @@ extension HomeViewController {
 			tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 			tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 		])
+	}
+	
+	private func configureTableView() {
+		tableView.dataSource = self
+		tableView.delegate = self
+		tableView.contentInsetAdjustmentBehavior = .never
+		tableView.separatorStyle = .none
+		tableView.register(ColorImageTableViewCell.self, forCellReuseIdentifier: String(describing: ColorImageTableViewCell.self))
 	}
 }
 

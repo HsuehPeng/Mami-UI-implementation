@@ -15,6 +15,7 @@
 		B883DF722ABD336D00D4BE7D /* mamilove_interviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF712ABD336D00D4BE7D /* mamilove_interviewTests.swift */; };
 		B883DF7C2ABD336D00D4BE7D /* mamilove_interviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF7B2ABD336D00D4BE7D /* mamilove_interviewUITests.swift */; };
 		B883DF7E2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */; };
+		B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B883DF772ABD336D00D4BE7D /* mamilove_interviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mamilove_interviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B883DF7B2ABD336D00D4BE7D /* mamilove_interviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewUITests.swift; sourceTree = "<group>"; };
 		B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B883DF632ABD336D00D4BE7D /* Assets.xcassets */,
 				B883DF652ABD336D00D4BE7D /* LaunchScreen.storyboard */,
 				B883DF682ABD336D00D4BE7D /* Info.plist */,
+				B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */,
 			);
 			path = mamilove_interview;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */,
+				B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */,
 				B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */,
 				B883DF5D2ABD336C00D4BE7D /* SceneDelegate.swift in Sources */,
 			);
