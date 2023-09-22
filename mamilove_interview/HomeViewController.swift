@@ -60,6 +60,21 @@ extension HomeViewController: UITableViewDelegate {
 		
 		return UITableView.automaticDimension
 	}
+	
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let contentOffsetY = scrollView.contentOffset.y
+		setNavBarBackgroundViewAlpha(by: contentOffsetY)
+	}
+	
+	private func setNavBarBackgroundViewAlpha(by offset: CGFloat) {
+		guard offset > 0 else {
+			navigationBarBackgroundView.alpha = 0
+			return
+		}
+		
+		let alpha = offset / 150
+		navigationBarBackgroundView.alpha = alpha > 1 ? 1 : alpha
+	}
 }
 
 // MARK: - UI Helpers
