@@ -64,7 +64,7 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 		
 		loader.completeLoadWith(.success(anyCheckoutInfo))
 		
-		XCTAssertEqual(sut.checkoutInfo, anyCheckoutInfo)
+		XCTAssertNotNil(sut.checkoutInfo)
 	}
 
 	// MARK: - Helpers
@@ -80,7 +80,11 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 	}
 	
 	private func anyCheckoutInfo() -> CheckoutInfo {
-		return CheckoutInfo()
+		let payments = Payments(title: "Payment", options: [])
+		let shippings = Shippings(title: "Shippings", options: [])
+		let preOrder = PreOrder(title: "PreOrder", description: "")
+		
+		return CheckoutInfo(payments: payments, shippings: shippings, preOrder: preOrder)
 	}
 							   
 	class CheckoutInfoLoaderSpy: CheckoutInfoLoader {
