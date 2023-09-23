@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "B477B9C6-7148-43D7-A091-6AD3273B1CE7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:mamilove_interview.xcodeproj",
+          "identifier" : "B883DF562ABD336C00D4BE7D",
+          "name" : "mamilove_interview"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:mamilove_interview.xcodeproj",
+        "identifier" : "B883DF6C2ABD336D00D4BE7D",
+        "name" : "mamilove_interviewTests"
+      }
+    }
+  ],
+  "version" : 1
+}
