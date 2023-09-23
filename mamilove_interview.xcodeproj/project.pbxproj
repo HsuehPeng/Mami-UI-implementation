@@ -12,7 +12,7 @@
 		B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */; };
 		B883DF642ABD336D00D4BE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B883DF632ABD336D00D4BE7D /* Assets.xcassets */; };
 		B883DF672ABD336D00D4BE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B883DF652ABD336D00D4BE7D /* LaunchScreen.storyboard */; };
-		B883DF722ABD336D00D4BE7D /* mamilove_interviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF712ABD336D00D4BE7D /* mamilove_interviewTests.swift */; };
+		B883DF722ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF712ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift */; };
 		B883DF7C2ABD336D00D4BE7D /* mamilove_interviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF7B2ABD336D00D4BE7D /* mamilove_interviewUITests.swift */; };
 		B883DF7E2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */; };
 		B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */; };
@@ -49,7 +49,7 @@
 		B883DF662ABD336D00D4BE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B883DF682ABD336D00D4BE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B883DF6D2ABD336D00D4BE7D /* mamilove_interviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mamilove_interviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B883DF712ABD336D00D4BE7D /* mamilove_interviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewTests.swift; sourceTree = "<group>"; };
+		B883DF712ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerViewModelTests.swift; sourceTree = "<group>"; };
 		B883DF772ABD336D00D4BE7D /* mamilove_interviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mamilove_interviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B883DF7B2ABD336D00D4BE7D /* mamilove_interviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewUITests.swift; sourceTree = "<group>"; };
 		B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			children = (
 				B883DFDC2ABEE97100D4BE7D /* mamilove_interview.xctestplan */,
 				B883DFDD2ABEF86000D4BE7D /* Helpers */,
-				B883DF712ABD336D00D4BE7D /* mamilove_interviewTests.swift */,
+				B883DF712ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift */,
 			);
 			path = mamilove_interviewTests;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B883DF722ABD336D00D4BE7D /* mamilove_interviewTests.swift in Sources */,
+				B883DF722ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift in Sources */,
 				B883DFDF2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

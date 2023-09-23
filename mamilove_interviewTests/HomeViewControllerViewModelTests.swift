@@ -35,7 +35,7 @@ class HomeViewControllerViewModel {
 	}
 }
 
-final class mamilove_interviewTests: XCTestCase {
+final class HomeViewControllerViewModelTests: XCTestCase {
 	
 	func test_loadCheckoutInfo_loaderDidCallLoad() {
 		let (sut, loader) = makeSut()
