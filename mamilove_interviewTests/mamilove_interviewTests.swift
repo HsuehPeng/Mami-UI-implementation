@@ -20,6 +20,7 @@ class HomeViewControllerViewModel {
 		self.checkoutInfoLoader = checkoutInfoLoader
 	}
 	
+	var checkoutInfo: CheckoutInfo?
 	var checkoutInfoLoadError: Error?
 	
 	func loadCheckoutInfo() {
@@ -27,8 +28,8 @@ class HomeViewControllerViewModel {
 			switch result {
 			case .failure(let error):
 				self?.checkoutInfoLoadError = error
-			default:
-				break
+			case .success(let checkoutInfo):
+				self?.checkoutInfo = checkoutInfo
 			}
 		}
 	}
@@ -54,6 +55,17 @@ final class mamilove_interviewTests: XCTestCase {
 		
 		XCTAssertEqual(sut.checkoutInfoLoadError as? CheckoutInfoLoaderSpy.Error, anyError)
 	}
+	
+	func test_loadCheckoutInfo_getCheckoutInfoWhenLoaderLoadsCheckoutInfo() {
+		let (sut, loader) = makeSut()
+		let anyCheckoutInfo = anyCheckoutInfo()
+		
+		sut.loadCheckoutInfo()
+		
+		loader.completeLoadWith(.success(anyCheckoutInfo))
+		
+		XCTAssertEqual(sut.checkoutInfo, anyCheckoutInfo)
+	}
 
 	// MARK: - Helpers
 	
@@ -61,6 +73,10 @@ final class mamilove_interviewTests: XCTestCase {
 		let checkoutInfoLoader = CheckoutInfoLoaderSpy()
 		let sut = HomeViewControllerViewModel(checkoutInfoLoader: checkoutInfoLoader)
 		return (sut, checkoutInfoLoader)
+	}
+	
+	private func anyCheckoutInfo() -> CheckoutInfo {
+		return CheckoutInfo()
 	}
 							   
 	class CheckoutInfoLoaderSpy: CheckoutInfoLoader {

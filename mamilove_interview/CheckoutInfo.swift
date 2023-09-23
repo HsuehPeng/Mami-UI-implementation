@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CheckoutInfo {
+struct CheckoutInfo: Equatable {
 	
 }
