@@ -13,15 +13,26 @@ protocol CheckoutInfoLoader {
 	func load(completion: @escaping (LoadResult) -> Void)
 }
 
+struct CheckoutInfoCellViewModel {
+	let title: String
+	let subTitle: NSAttributedString
+	let isArrowButtonHidden: Bool
+}
+
 class HomeViewControllerViewModel {
-	let checkoutInfoLoader: CheckoutInfoLoader
+	private let checkoutInfoLoader: CheckoutInfoLoader
 	
 	init(checkoutInfoLoader: CheckoutInfoLoader) {
 		self.checkoutInfoLoader = checkoutInfoLoader
 	}
 	
-	var checkoutInfo: CheckoutInfo?
+	var checkoutInfo: CheckoutInfo? {
+		didSet {
+			self.checkoutInfoCellViewModels = mapCheckoutInfoCellViewModels(for: checkoutInfo)
+		}
+	}
 	var checkoutInfoLoadError: Error?
+	var checkoutInfoCellViewModels = [CheckoutInfoCellViewModel]()
 	
 	func loadCheckoutInfo() {
 		checkoutInfoLoader.load { [weak self] result in
@@ -33,6 +44,68 @@ class HomeViewControllerViewModel {
 			}
 		}
 	}
+	
+	private func mapCheckoutInfoCellViewModels(for checkoutInfo: CheckoutInfo?) -> [CheckoutInfoCellViewModel] {
+		guard let checkoutInfo = checkoutInfo else { return [] }
+		return [mapPayment(for: checkoutInfo.payments), mapShippings(for: checkoutInfo.shippings), mapPreOrder(for: checkoutInfo.preOrder)]
+	}
+	
+	private func mapPayment(for payment: Payments) -> CheckoutInfoCellViewModel {
+		let title = payment.title
+		
+		let subTitleAttribute: [NSAttributedString.Key: Any] = [
+			.font: UIFont.systemFont(ofSize: 12),
+			.foregroundColor: UIColor.label
+		]
+		let subTitleString = payment.options.map { option in
+			option.title
+		}.joined(separator: "・")
+		
+		let subTitle = NSAttributedString(string: subTitleString, attributes: subTitleAttribute)
+		
+		return CheckoutInfoCellViewModel(title: title, subTitle: subTitle, isArrowButtonHidden: false)
+	}
+	
+	private func mapShippings(for shippings: Shippings) -> CheckoutInfoCellViewModel {
+		let title = shippings.title
+		
+		let subTitleFirstAttribute: [NSAttributedString.Key: Any] = [
+			.font: UIFont.systemFont(ofSize: 12),
+			.foregroundColor: UIColor.label
+		]
+		
+		let subTitleSecondAttribute: [NSAttributedString.Key: Any] = [
+			.font: UIFont.systemFont(ofSize: 10),
+			.foregroundColor: UIColor.secondaryLabel
+		]
+		
+		let subTitle = NSMutableAttributedString(string: "")
+		
+		for i in 0..<shippings.options.count {
+			if i > 1 { break }
+			let option = shippings.options[i]
+			let optionTitle = NSMutableAttributedString(string: option.title, attributes: subTitleFirstAttribute)
+			let optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運\n", attributes: subTitleSecondAttribute)
+			optionTitle.append(optionFreeThresholdString)
+			subTitle.append(optionTitle)
+		}
+
+		return CheckoutInfoCellViewModel(title: title, subTitle: subTitle, isArrowButtonHidden: false)
+	}
+	
+	private func mapPreOrder(for preOrder: PreOrder) -> CheckoutInfoCellViewModel {
+		let title = preOrder.title
+		
+		let subTitleAttribute: [NSAttributedString.Key: Any] = [
+			.font: UIFont.systemFont(ofSize: 12),
+			.foregroundColor: UIColor.label
+		]
+		
+		let subTitle = NSAttributedString(string: preOrder.description, attributes: subTitleAttribute)
+
+		return CheckoutInfoCellViewModel(title: title, subTitle: subTitle, isArrowButtonHidden: true)
+	}
+	
 }
 
 final class HomeViewControllerViewModelTests: XCTestCase {
@@ -66,6 +139,26 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 		
 		XCTAssertNotNil(sut.checkoutInfo)
 	}
+	
+	func test_loadCheckoutInfo_updateCheckoutInfoCellViewModelsAfterCheckoutInfoHasBeenLoaded() {
+		let (sut, loader) = makeSut()
+		let anyCheckoutInfo = anyCheckoutInfo()
+		let expectedCheckoutInfoCellViewModels = anyCheckoutInfoCellViewModels()
+		
+		sut.loadCheckoutInfo()
+		
+		loader.completeLoadWith(.success(anyCheckoutInfo))
+		
+		XCTAssertFalse(sut.checkoutInfoCellViewModels.isEmpty, "checkoutInfoCellViewModels should not be empty after checkoutInfo has been loaded")
+
+		for i in 0..<sut.checkoutInfoCellViewModels.count {
+			let retrievedVM = sut.checkoutInfoCellViewModels[i]
+			let expectedVM = expectedCheckoutInfoCellViewModels[i]
+			XCTAssertEqual(retrievedVM.title, expectedVM.title)
+			XCTAssertEqual(retrievedVM.subTitle.string, expectedVM.subTitle.string)
+			XCTAssertEqual(retrievedVM.isArrowButtonHidden, expectedVM.isArrowButtonHidden)
+		}
+	}
 
 	// MARK: - Helpers
 	
@@ -81,10 +174,18 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 	
 	private func anyCheckoutInfo() -> CheckoutInfo {
 		let payments = Payments(title: "Payment", options: [])
-		let shippings = Shippings(title: "Shippings", options: [])
+		let shippings = Shippings(title: "Shipping", options: [])
 		let preOrder = PreOrder(title: "PreOrder", description: "")
 		
 		return CheckoutInfo(payments: payments, shippings: shippings, preOrder: preOrder)
+	}
+	
+	private func anyCheckoutInfoCellViewModels() -> [CheckoutInfoCellViewModel] {
+		return [
+			CheckoutInfoCellViewModel(title: "Payment", subTitle: NSAttributedString(string: ""), isArrowButtonHidden: false),
+			CheckoutInfoCellViewModel(title: "Shipping", subTitle: NSAttributedString(string: ""), isArrowButtonHidden: false),
+			CheckoutInfoCellViewModel(title: "PreOrder", subTitle: NSAttributedString(string: ""), isArrowButtonHidden: true),
+		]
 	}
 							   
 	class CheckoutInfoLoaderSpy: CheckoutInfoLoader {
