@@ -69,9 +69,13 @@ final class mamilove_interviewTests: XCTestCase {
 
 	// MARK: - Helpers
 	
-	private func makeSut() -> (HomeViewControllerViewModel, CheckoutInfoLoaderSpy) {
+	private func makeSut(file: StaticString = #filePath, line: UInt = #line) -> (HomeViewControllerViewModel, CheckoutInfoLoaderSpy) {
 		let checkoutInfoLoader = CheckoutInfoLoaderSpy()
 		let sut = HomeViewControllerViewModel(checkoutInfoLoader: checkoutInfoLoader)
+		
+		trackForMemoryLeaks(checkoutInfoLoader, file: file, line: line)
+		trackForMemoryLeaks(sut, file: file, line: line)
+		
 		return (sut, checkoutInfoLoader)
 	}
 	
