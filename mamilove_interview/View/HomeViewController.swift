@@ -53,12 +53,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.checkoutInfoCellViewModels.count
+		return viewModel.checkoutInfoCellViewModels.value.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeue(InfoCell.self, for: indexPath) as! InfoCell
-		let paymentCellVM = viewModel.checkoutInfoCellViewModels[indexPath.row]
+		let paymentCellVM = viewModel.checkoutInfoCellViewModels.value[indexPath.row]
 		
 		cell.titleLabel.text = paymentCellVM.title
 		cell.subTitleLabel.attributedText = paymentCellVM.subTitle

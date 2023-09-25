@@ -18,11 +18,11 @@ class HomeViewControllerViewModel {
 	
 	var checkoutInfo: CheckoutInfo? {
 		didSet {
-			self.checkoutInfoCellViewModels = checkoutInfoPresentationMapper.mapCheckoutInfo(for: checkoutInfo)
+			self.checkoutInfoCellViewModels.value = checkoutInfoPresentationMapper.mapCheckoutInfo(for: checkoutInfo)
 		}
 	}
 	var checkoutInfoLoadError: Error?
-	var checkoutInfoCellViewModels = [InfoCellViewModel]()
+	var checkoutInfoCellViewModels = Bindable([InfoCellViewModel]())
 	
 	func loadCheckoutInfo() {
 		checkoutInfoLoader.load { [weak self] result in

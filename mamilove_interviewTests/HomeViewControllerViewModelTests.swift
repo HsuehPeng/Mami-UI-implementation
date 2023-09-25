@@ -59,10 +59,10 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 		
 		loader.completeLoadWith(.success(anyCheckoutInfo))
 		
-		XCTAssertEqual(sut.checkoutInfoCellViewModels.count, checkoutInfoMapper.mapCheckoutInfo(for: anyCheckoutInfo).count)
+		XCTAssertEqual(sut.checkoutInfoCellViewModels.value.count, checkoutInfoMapper.mapCheckoutInfo(for: anyCheckoutInfo).count)
 
-		for i in 0..<sut.checkoutInfoCellViewModels.count {
-			let retrievedVM = sut.checkoutInfoCellViewModels[i]
+		for i in 0..<sut.checkoutInfoCellViewModels.value.count {
+			let retrievedVM = sut.checkoutInfoCellViewModels.value[i]
 			let expectedVM = expectedCheckoutInfoCellViewModels[i]
 			XCTAssertEqual(retrievedVM.title, expectedVM.title)
 			XCTAssertEqual(retrievedVM.subTitle.string, expectedVM.subTitle.string)

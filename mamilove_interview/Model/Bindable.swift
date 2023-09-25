@@ -1,0 +1,32 @@
+//
+//  Bindable.swift
+//  mamilove_interview
+//
+//  Created by Hsueh Peng Tseng on 2023/9/25.
+//
+
+import Foundation
+
+class Bindable<T> {
+	typealias Listener = ((T) -> Void)
+	var listener: Listener?
+
+	var value: T {
+		didSet {
+			listener?(value)
+		}
+	}
+
+	init(_ v: T) {
+		self.value = v
+	}
+
+	func bind(_ listener: Listener?) {
+		self.listener = listener
+	}
+
+	func bindAndFire(_ listener: Listener?) {
+		self.listener = listener
+		listener?(value)
+	}
+}
