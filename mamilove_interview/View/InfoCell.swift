@@ -68,13 +68,13 @@ final class InfoCell: UITableViewCell {
 		contentView.addSubview(dashLineView)
 
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
 			titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
 		])
 	
 		subTitleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 		NSLayoutConstraint.activate([
-			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
 			subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
 		])
 		
@@ -87,7 +87,7 @@ final class InfoCell: UITableViewCell {
 		])
 		
 		NSLayoutConstraint.activate([
-			dashLineView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
+			dashLineView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 12),
 			dashLineView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
 			dashLineView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
 			dashLineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
