@@ -15,13 +15,22 @@ class CheckoutInfoUIKitPresentationMapper: CheckoutInfoPresentationMapper {
 }
 
 extension CheckoutInfoUIKitPresentationMapper {
-	private func mapPayment(for payment: Payments) -> InfoCellViewModel {
-		let title = payment.title
-		
-		let subTitleAttribute: [NSAttributedString.Key: Any] = [
+	var subTitleAttribute: [NSAttributedString.Key: Any] {
+		return [
 			.font: UIFont.systemFont(ofSize: 14),
 			.foregroundColor: UIColor.black
 		]
+	}
+	
+	var subTitleSecondAttribute: [NSAttributedString.Key: Any] {
+		return [
+			.font: UIFont.systemFont(ofSize: 10),
+			.foregroundColor: UIColor.gray
+		]
+	}
+	
+	private func mapPayment(for payment: Payments) -> InfoCellViewModel {
+		let title = payment.title
 		let subTitleString = payment.options.map { option in
 			option.title
 		}.joined(separator: "・")
@@ -33,30 +42,17 @@ extension CheckoutInfoUIKitPresentationMapper {
 	
 	private func mapShippings(for shippings: Shippings) -> InfoCellViewModel {
 		let title = shippings.title
-		
-		let subTitleFirstAttribute: [NSAttributedString.Key: Any] = [
-			.font: UIFont.systemFont(ofSize: 14),
-			.foregroundColor: UIColor.black
-		]
-		
-		let subTitleSecondAttribute: [NSAttributedString.Key: Any] = [
-			.font: UIFont.systemFont(ofSize: 10),
-			.foregroundColor: UIColor.gray
-		]
-		
 		let subTitle = NSMutableAttributedString(string: "")
 		
 		for i in 0..<shippings.options.count {
 			if i > 1 { break }
 			
 			let option = shippings.options[i]
-			let optionTitle = NSMutableAttributedString(string: "\(option.title)  ", attributes: subTitleFirstAttribute)
-			let optionFreeThresholdString: NSAttributedString
+			let optionTitle = NSMutableAttributedString(string: "\(option.title)  ", attributes: subTitleAttribute)
+			let optionFreeThresholdString = NSMutableAttributedString(string: "滿$\(option.freeThreshold)免運", attributes: subTitleSecondAttribute)
 
 			if i == 0 && i != shippings.options.count - 1 {
-				optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運\n", attributes: subTitleSecondAttribute)
-			} else {
-				optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運", attributes: subTitleSecondAttribute)
+				optionFreeThresholdString.append(NSAttributedString(string: "\n"))
 			}
 			
 			optionTitle.append(optionFreeThresholdString)
@@ -68,11 +64,6 @@ extension CheckoutInfoUIKitPresentationMapper {
 	
 	private func mapPreOrder(for preOrder: PreOrder) -> InfoCellViewModel {
 		let title = preOrder.title
-		
-		let subTitleAttribute: [NSAttributedString.Key: Any] = [
-			.font: UIFont.systemFont(ofSize: 14),
-			.foregroundColor: UIColor.black
-		]
 		
 		let subTitle = NSAttributedString(string: preOrder.description, attributes: subTitleAttribute)
 
