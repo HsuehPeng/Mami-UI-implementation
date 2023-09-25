@@ -32,6 +32,13 @@ final class InfoCell: UITableViewCell {
 		return button
 	}()
 	
+	lazy var dashLineView: DashedLineView = {
+		let view = DashedLineView()
+		view.translatesAutoresizingMaskIntoConstraints = false
+		view.backgroundColor = .clear
+		return view
+	}()
+	
 	var openPanel: (() -> Void)?
 	
 	// MARK: - LifeCycle
@@ -58,6 +65,7 @@ final class InfoCell: UITableViewCell {
 		contentView.addSubview(titleLabel)
 		contentView.addSubview(subTitleLabel)
 		contentView.addSubview(arrowButton)
+		contentView.addSubview(dashLineView)
 
 		NSLayoutConstraint.activate([
 			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
@@ -68,7 +76,6 @@ final class InfoCell: UITableViewCell {
 		NSLayoutConstraint.activate([
 			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
 			subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
-			subTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
 		])
 		
 		NSLayoutConstraint.activate([
@@ -77,6 +84,14 @@ final class InfoCell: UITableViewCell {
 			arrowButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
 			arrowButton.widthAnchor.constraint(equalToConstant: 18),
 			arrowButton.heightAnchor.constraint(equalToConstant: 18)
+		])
+		
+		NSLayoutConstraint.activate([
+			dashLineView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
+			dashLineView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+			dashLineView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+			dashLineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+			dashLineView.heightAnchor.constraint(equalToConstant: 1)
 		])
 	}
 }

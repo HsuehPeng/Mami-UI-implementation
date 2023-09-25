@@ -136,7 +136,7 @@ extension HomeViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.contentInsetAdjustmentBehavior = .never
-		tableView.separatorStyle = .singleLine
+		tableView.separatorStyle = .none
 		tableView.register(ColorImageTableViewCell.self, forHeaderFooterViewReuseIdentifier: String(describing: ColorImageTableViewCell.self))
 		tableView.register(InfoCell.self)
 	}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B855BB612AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */; };
+		B855BB652AC15A7E0019FB3D /* DashedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB642AC15A7E0019FB3D /* DashedLineView.swift */; };
 		B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */; };
 		B883DF5D2ABD336C00D4BE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */; };
 		B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoPresentationMapper.swift; sourceTree = "<group>"; };
+		B855BB642AC15A7E0019FB3D /* DashedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLineView.swift; sourceTree = "<group>"; };
 		B883DF572ABD336C00D4BE7D /* mamilove_interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mamilove_interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */,
 				B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */,
 				B883DFD22ABD7C3700D4BE7D /* InfoCell.swift */,
+				B855BB642AC15A7E0019FB3D /* DashedLineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */,
 				B883DFEA2AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift in Sources */,
 				B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */,
+				B855BB652AC15A7E0019FB3D /* DashedLineView.swift in Sources */,
 				B883DFE12ABF193400D4BE7D /* MockCheckoutInfoLoader.swift in Sources */,
 				B883DFD52ABD89B200D4BE7D /* UITableView+Extension.swift in Sources */,
 				B883DFE72ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift in Sources */,
