@@ -10,6 +10,7 @@
 		B855BB612AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */; };
 		B855BB652AC15A7E0019FB3D /* DashedLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB642AC15A7E0019FB3D /* DashedLineView.swift */; };
 		B855BB672AC168900019FB3D /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB662AC168900019FB3D /* Bindable.swift */; };
+		B855BB692AC16DD80019FB3D /* CheckoutInfoUIKitPresentationMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB682AC16DD80019FB3D /* CheckoutInfoUIKitPresentationMapperTests.swift */; };
 		B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */; };
 		B883DF5D2ABD336C00D4BE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */; };
 		B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */; };
@@ -52,6 +53,7 @@
 		B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoPresentationMapper.swift; sourceTree = "<group>"; };
 		B855BB642AC15A7E0019FB3D /* DashedLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLineView.swift; sourceTree = "<group>"; };
 		B855BB662AC168900019FB3D /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		B855BB682AC16DD80019FB3D /* CheckoutInfoUIKitPresentationMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoUIKitPresentationMapperTests.swift; sourceTree = "<group>"; };
 		B883DF572ABD336C00D4BE7D /* mamilove_interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mamilove_interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				B883DFDC2ABEE97100D4BE7D /* mamilove_interview.xctestplan */,
 				B883DFDD2ABEF86000D4BE7D /* Helpers */,
 				B883DF712ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift */,
+				B855BB682AC16DD80019FB3D /* CheckoutInfoUIKitPresentationMapperTests.swift */,
 			);
 			path = mamilove_interviewTests;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B855BB692AC16DD80019FB3D /* CheckoutInfoUIKitPresentationMapperTests.swift in Sources */,
 				B883DF722ABD336D00D4BE7D /* HomeViewControllerViewModelTests.swift in Sources */,
 				B883DFDF2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
