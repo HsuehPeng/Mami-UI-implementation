@@ -51,15 +51,14 @@ extension CheckoutInfoUIKitPresentationMapper {
 			
 			let option = shippings.options[i]
 			let optionTitle = NSMutableAttributedString(string: "\(option.title)  ", attributes: subTitleFirstAttribute)
+			let optionFreeThresholdString: NSAttributedString
 
-			if i == 1 {
-				let optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運", attributes: subTitleSecondAttribute)
-				optionTitle.append(optionFreeThresholdString)
-				subTitle.append(optionTitle)
-				break
+			if i == 0 && i != shippings.options.count - 1 {
+				optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運\n", attributes: subTitleSecondAttribute)
+			} else {
+				optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運", attributes: subTitleSecondAttribute)
 			}
 			
-			let optionFreeThresholdString = NSAttributedString(string: "滿$\(option.freeThreshold)免運\n", attributes: subTitleSecondAttribute)
 			optionTitle.append(optionFreeThresholdString)
 			subTitle.append(optionTitle)
 		}
