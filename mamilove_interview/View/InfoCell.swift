@@ -63,7 +63,8 @@ final class InfoCell: UITableViewCell {
 			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
 			titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
 		])
-		
+	
+		subTitleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 		NSLayoutConstraint.activate([
 			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
 			subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),

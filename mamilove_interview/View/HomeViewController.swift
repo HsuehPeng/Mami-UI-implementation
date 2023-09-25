@@ -59,10 +59,10 @@ extension HomeViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeue(InfoCell.self, for: indexPath) as! InfoCell
 		let paymentCellVM = viewModel.checkoutInfoCellViewModels[indexPath.row]
+		
 		cell.titleLabel.text = paymentCellVM.title
 		cell.subTitleLabel.attributedText = paymentCellVM.subTitle
 		cell.arrowButton.isHidden = paymentCellVM.isArrowButtonHidden
-		
 		cell.openPanel = { print("Open Panel") }
 		
 		return cell
