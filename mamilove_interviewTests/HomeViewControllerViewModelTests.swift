@@ -40,6 +40,16 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 		XCTAssertNotNil(sut.checkoutInfo)
 	}
 	
+	func test_updateCheckoutInfoCellViewModels_AfterCheckoutInfoHasBeenLoaded_mapCheckoutInfoCallCount() {
+		let (sut, _, checkoutInfoMapper) = makeSut()
+		let anyCheckoutInfo = anyCheckoutInfo()
+		
+		sut.checkoutInfo = anyCheckoutInfo
+		sut.checkoutInfo = nil
+		
+		XCTAssertEqual(checkoutInfoMapper.mapCheckoutInfoCallCount, 2)
+	}
+	
 	func test_loadCheckoutInfo_updateCheckoutInfoCellViewModelsAfterCheckoutInfoHasBeenLoaded() {
 		let (sut, loader, checkoutInfoMapper) = makeSut()
 		let anyCheckoutInfo = anyCheckoutInfo()
@@ -108,7 +118,10 @@ final class HomeViewControllerViewModelTests: XCTestCase {
 	}
 	
 	class CheckoutInfoPresentationMapperMock: CheckoutInfoPresentationMapper {
+		var mapCheckoutInfoCallCount = 0
+		
 		func mapCheckoutInfo(for checkoutInfo: CheckoutInfo?) -> [InfoCellViewModel] {
+			mapCheckoutInfoCallCount += 1
 			return []
 		}
 	}
