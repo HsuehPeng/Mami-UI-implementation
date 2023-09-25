@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
 		configureUI()
 		configureTableView()
 		
+		bindViewModel()
 		viewModel.loadCheckoutInfo()
 	}
 	
@@ -47,6 +48,12 @@ class HomeViewController: UIViewController {
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
+	private func bindViewModel() {
+		viewModel.checkoutInfoCellViewModels.bind { [weak self] _ in
+			self?.tableView.reloadData()
+		}
+	}
 }
 
 // MARK: - UITableViewDataSource
@@ -57,12 +64,12 @@ extension HomeViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeue(InfoCell.self, for: indexPath) as! InfoCell
-		let paymentCellVM = viewModel.checkoutInfoCellViewModels.value[indexPath.row]
+		guard let cell = tableView.dequeue(InfoCell.self, for: indexPath) as? InfoCell else { return UITableViewCell() }
+		let infoCellVM = viewModel.checkoutInfoCellViewModels.value[indexPath.row]
 		
-		cell.titleLabel.text = paymentCellVM.title
-		cell.subTitleLabel.attributedText = paymentCellVM.subTitle
-		cell.arrowButton.isHidden = paymentCellVM.isArrowButtonHidden
+		cell.titleLabel.text = infoCellVM.title
+		cell.subTitleLabel.attributedText = infoCellVM.subTitle
+		cell.arrowButton.isHidden = infoCellVM.isArrowButtonHidden
 		cell.openPanel = { print("Open Panel") }
 		
 		return cell
