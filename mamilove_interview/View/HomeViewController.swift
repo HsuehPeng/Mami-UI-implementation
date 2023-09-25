@@ -62,6 +62,9 @@ extension HomeViewController: UITableViewDataSource {
 		cell.titleLabel.text = paymentCellVM.title
 		cell.subTitleLabel.attributedText = paymentCellVM.subTitle
 		cell.arrowButton.isHidden = paymentCellVM.isArrowButtonHidden
+		
+		cell.openPanel = { print("Open Panel") }
+		
 		return cell
 	}
 	

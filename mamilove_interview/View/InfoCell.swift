@@ -28,8 +28,11 @@ final class InfoCell: UITableViewCell {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setImage(UIImage(named: "chevron_left"), for: .normal)
+		button.addTarget(self, action: #selector(didTapArrowButton), for: .touchUpInside)
 		return button
 	}()
+	
+	var openPanel: (() -> Void)?
 	
 	// MARK: - LifeCycle
 
@@ -41,6 +44,12 @@ final class InfoCell: UITableViewCell {
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	// MARK: - Actions
+	
+	@objc func didTapArrowButton() {
+		openPanel?()
 	}
 	
 	// MARK: - UI Helpers
