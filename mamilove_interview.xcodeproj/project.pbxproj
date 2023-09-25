@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B855BB612AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */; };
 		B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */; };
 		B883DF5D2ABD336C00D4BE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */; };
 		B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */; };
@@ -17,10 +18,15 @@
 		B883DF7E2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */; };
 		B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */; };
 		B883DFD12ABD7BF100D4BE7D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */; };
-		B883DFD32ABD7C3700D4BE7D /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */; };
+		B883DFD32ABD7C3700D4BE7D /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD22ABD7C3700D4BE7D /* InfoCell.swift */; };
 		B883DFD52ABD89B200D4BE7D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */; };
 		B883DFDB2ABEE5E600D4BE7D /* CheckoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFDA2ABEE5E600D4BE7D /* CheckoutInfo.swift */; };
 		B883DFDF2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFDE2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift */; };
+		B883DFE12ABF193400D4BE7D /* MockCheckoutInfoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFE02ABF193400D4BE7D /* MockCheckoutInfoLoader.swift */; };
+		B883DFE32ABF1EA100D4BE7D /* CheckoutInfoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFE22ABF1EA100D4BE7D /* CheckoutInfoLoader.swift */; };
+		B883DFE52ABF1EBA00D4BE7D /* InfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFE42ABF1EBA00D4BE7D /* InfoCellViewModel.swift */; };
+		B883DFE72ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFE62ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift */; };
+		B883DFEA2AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B883DFE92AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoPresentationMapper.swift; sourceTree = "<group>"; };
 		B883DF572ABD336C00D4BE7D /* mamilove_interview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mamilove_interview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,11 +62,16 @@
 		B883DF7D2ABD336D00D4BE7D /* mamilove_interviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mamilove_interviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorImageTableViewCell.swift; sourceTree = "<group>"; };
 		B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		B883DFD22ABD7C3700D4BE7D /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		B883DFDA2ABEE5E600D4BE7D /* CheckoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfo.swift; sourceTree = "<group>"; };
-		B883DFDC2ABEE97100D4BE7D /* mamilove_interview.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = mamilove_interview.xctestplan; sourceTree = SOURCE_ROOT; };
+		B883DFDC2ABEE97100D4BE7D /* mamilove_interview.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = mamilove_interview.xctestplan; sourceTree = SOURCE_ROOT; };
 		B883DFDE2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		B883DFE02ABF193400D4BE7D /* MockCheckoutInfoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCheckoutInfoLoader.swift; sourceTree = "<group>"; };
+		B883DFE22ABF1EA100D4BE7D /* CheckoutInfoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoLoader.swift; sourceTree = "<group>"; };
+		B883DFE42ABF1EBA00D4BE7D /* InfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCellViewModel.swift; sourceTree = "<group>"; };
+		B883DFE62ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerViewModel.swift; sourceTree = "<group>"; };
+		B883DFE92AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfoUIKitPresentationMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B855BB5F2AC14AFC0019FB3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B883DFDA2ABEE5E600D4BE7D /* CheckoutInfo.swift */,
+				B883DFE22ABF1EA100D4BE7D /* CheckoutInfoLoader.swift */,
+				B883DFE02ABF193400D4BE7D /* MockCheckoutInfoLoader.swift */,
+				B855BB602AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift */,
+				B883DFE92AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B855BB622AC14EA60019FB3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */,
+				B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */,
+				B883DFD22ABD7C3700D4BE7D /* InfoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B855BB632AC14EC50019FB3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B883DFE62ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift */,
+				B883DFE42ABF1EBA00D4BE7D /* InfoCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B883DF4E2ABD336C00D4BE7D = {
 			isa = PBXGroup;
 			children = (
@@ -112,15 +155,13 @@
 			children = (
 				B883DF5A2ABD336C00D4BE7D /* AppDelegate.swift */,
 				B883DF5C2ABD336C00D4BE7D /* SceneDelegate.swift */,
-				B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */,
-				B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */,
-				B883DF5E2ABD336C00D4BE7D /* HomeViewController.swift */,
-				B883DFCE2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift */,
-				B883DFD22ABD7C3700D4BE7D /* PaymentCell.swift */,
 				B883DF632ABD336D00D4BE7D /* Assets.xcassets */,
 				B883DF652ABD336D00D4BE7D /* LaunchScreen.storyboard */,
 				B883DF682ABD336D00D4BE7D /* Info.plist */,
-				B883DFDA2ABEE5E600D4BE7D /* CheckoutInfo.swift */,
+				B883DFE82AC07B2400D4BE7D /* Extension */,
+				B855BB5F2AC14AFC0019FB3D /* Model */,
+				B855BB622AC14EA60019FB3D /* View */,
+				B855BB632AC14EC50019FB3D /* ViewModel */,
 			);
 			path = mamilove_interview;
 			sourceTree = "<group>";
@@ -150,6 +191,15 @@
 				B883DFDE2ABEF87200D4BE7D /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B883DFE82AC07B2400D4BE7D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B883DFD02ABD7BF100D4BE7D /* UIImage+Extension.swift */,
+				B883DFD42ABD89B200D4BE7D /* UITableView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,13 +333,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B883DF5F2ABD336C00D4BE7D /* HomeViewController.swift in Sources */,
+				B883DFEA2AC148DB00D4BE7D /* CheckoutInfoUIKitPresentationMapper.swift in Sources */,
 				B883DFCF2ABD7A0B00D4BE7D /* ColorImageTableViewCell.swift in Sources */,
+				B883DFE12ABF193400D4BE7D /* MockCheckoutInfoLoader.swift in Sources */,
 				B883DFD52ABD89B200D4BE7D /* UITableView+Extension.swift in Sources */,
+				B883DFE72ABF1ECE00D4BE7D /* HomeViewControllerViewModel.swift in Sources */,
 				B883DFD12ABD7BF100D4BE7D /* UIImage+Extension.swift in Sources */,
-				B883DFD32ABD7C3700D4BE7D /* PaymentCell.swift in Sources */,
+				B883DFD32ABD7C3700D4BE7D /* InfoCell.swift in Sources */,
+				B883DFE32ABF1EA100D4BE7D /* CheckoutInfoLoader.swift in Sources */,
 				B883DF5B2ABD336C00D4BE7D /* AppDelegate.swift in Sources */,
 				B883DF5D2ABD336C00D4BE7D /* SceneDelegate.swift in Sources */,
 				B883DFDB2ABEE5E600D4BE7D /* CheckoutInfo.swift in Sources */,
+				B855BB612AC14E6B0019FB3D /* CheckoutInfoPresentationMapper.swift in Sources */,
+				B883DFE52ABF1EBA00D4BE7D /* InfoCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

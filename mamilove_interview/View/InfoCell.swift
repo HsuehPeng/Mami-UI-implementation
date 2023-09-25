@@ -7,20 +7,19 @@
 
 import UIKit
 
-final class PaymentCell: UITableViewCell {
+final class InfoCell: UITableViewCell {
 	// MARK: - Properties
 	
 	lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Title"
+		label.font = UIFont.systemFont(ofSize: 14)
 		return label
 	}()
 	
 	lazy var subTitleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "SubTitle"
 		label.numberOfLines = 0
 		return label
 	}()
@@ -51,20 +50,20 @@ final class PaymentCell: UITableViewCell {
 		contentView.addSubview(arrowButton)
 
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-			titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4)
+			titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+			titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
 		])
 		
 		NSLayoutConstraint.activate([
-			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+			subTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
 			subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
-			subTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
+			subTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
 		])
 		
 		NSLayoutConstraint.activate([
 			arrowButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 			arrowButton.leadingAnchor.constraint(equalTo: subTitleLabel.trailingAnchor, constant: 32),
-			arrowButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4)
+			arrowButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
 		])
 	}
 }

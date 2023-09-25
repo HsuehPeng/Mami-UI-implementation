@@ -19,11 +19,13 @@ class HomeViewController: UIViewController {
 	}()
 	
 	lazy var tableView: UITableView = {
-		let tableView = UITableView()
+		let tableView = UITableView(frame: .zero, style: .grouped)
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.backgroundColor = .white
 		return tableView
 	}()
+	
+	let viewModel: HomeViewControllerViewModel
 	
 	// MARK: - LifeCycle
 	
@@ -33,6 +35,17 @@ class HomeViewController: UIViewController {
 		configureNavBar()
 		configureUI()
 		configureTableView()
+		
+		viewModel.loadCheckoutInfo()
+	}
+	
+	init(viewModel: HomeViewControllerViewModel) {
+		self.viewModel = viewModel
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
 	}
 }
 
@@ -40,13 +53,21 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		1
+		return viewModel.checkoutInfoCellViewModels.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeue(ColorImageTableViewCell.self, for: indexPath)
-		
+		let cell = tableView.dequeue(InfoCell.self, for: indexPath) as! InfoCell
+		let paymentCellVM = viewModel.checkoutInfoCellViewModels[indexPath.row]
+		cell.titleLabel.text = paymentCellVM.title
+		cell.subTitleLabel.attributedText = paymentCellVM.subTitle
+		cell.arrowButton.isHidden = paymentCellVM.isArrowButtonHidden
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing: ColorImageTableViewCell.self))
+		return header
 	}
 }
 
@@ -54,11 +75,11 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		if indexPath.row == 0 {
-			return 300
-		}
-		
 		return UITableView.automaticDimension
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 300
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -86,7 +107,6 @@ extension HomeViewController {
 		navigationController?.navigationBar.shadowImage = UIImage()
 		navigationController?.navigationBar.tintColor = .white
 		navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .plain, target: nil, action: nil)
 	}
 	
@@ -113,8 +133,9 @@ extension HomeViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.contentInsetAdjustmentBehavior = .never
-		tableView.separatorStyle = .none
-		tableView.register(ColorImageTableViewCell.self)
+		tableView.separatorStyle = .singleLine
+		tableView.register(ColorImageTableViewCell.self, forHeaderFooterViewReuseIdentifier: String(describing: ColorImageTableViewCell.self))
+		tableView.register(InfoCell.self)
 	}
 }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorImageTableViewCell: UITableViewCell {
+class ColorImageTableViewCell: UITableViewHeaderFooterView {
 	lazy var imageLayer: CALayer = {
 		let colorImage = UIImage.make(withColor: .darkGray)
 		let imageLayer = CALayer()
@@ -15,9 +15,8 @@ class ColorImageTableViewCell: UITableViewCell {
 		return imageLayer
 	}()
 	
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
+	override init(reuseIdentifier: String?) {
+		super.init(reuseIdentifier: reuseIdentifier)
 		configureUI()
 	}
 	

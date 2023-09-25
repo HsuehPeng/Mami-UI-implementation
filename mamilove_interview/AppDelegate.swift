@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		
 		window = UIWindow()
-		let viewController = HomeViewController()
-		let navigationController = UINavigationController(rootViewController: viewController)
+		let homeViewControllerVM = HomeViewControllerViewModel(checkoutInfoLoader: MockCheckoutInfoLoader(), checkoutInfoCellViewModelMapper: CheckoutInfoUIKitPresentationMapper())
+		let homeViewController = HomeViewController(viewModel: homeViewControllerVM)
+		let navigationController = UINavigationController(rootViewController: homeViewController)
 		window?.rootViewController = navigationController
 		window?.makeKeyAndVisible()
 		
