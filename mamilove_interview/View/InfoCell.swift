@@ -27,6 +27,7 @@ final class InfoCell: UITableViewCell {
 	lazy var arrowButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setImage(UIImage(named: "chevron_left"), for: .normal)
 		return button
 	}()
 	
@@ -63,7 +64,9 @@ final class InfoCell: UITableViewCell {
 		NSLayoutConstraint.activate([
 			arrowButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 			arrowButton.leadingAnchor.constraint(equalTo: subTitleLabel.trailingAnchor, constant: 32),
-			arrowButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+			arrowButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+			arrowButton.widthAnchor.constraint(equalToConstant: 18),
+			arrowButton.heightAnchor.constraint(equalToConstant: 18)
 		])
 	}
 }
