@@ -26,6 +26,10 @@ class MockCheckoutInfoLoader: CheckoutInfoLoader {
 		let preOrder = PreOrder(title: "預購", description: "付款後 14 ~ 21 個工作天")
 		
 		let checkoutInfo = CheckoutInfo(payments: payments, shippings: shipping, preOrder: preOrder)
-		completion(.success(checkoutInfo))
+		
+		// This is simulating the network call for data retrieval completing
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+			completion(.success(checkoutInfo))
+		}
 	}
 }
