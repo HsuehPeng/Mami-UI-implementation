@@ -67,6 +67,7 @@ extension HomeViewController: UITableViewDataSource {
 		guard let cell = tableView.dequeue(InfoCell.self, for: indexPath) as? InfoCell else { return UITableViewCell() }
 		let infoCellVM = viewModel.checkoutInfoCellViewModels.value[indexPath.row]
 		
+		cell.selectionStyle = .none
 		cell.titleLabel.text = infoCellVM.title
 		cell.subTitleLabel.attributedText = infoCellVM.subTitle
 		cell.arrowButton.isHidden = infoCellVM.isArrowButtonHidden
